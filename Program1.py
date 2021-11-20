@@ -1,3 +1,6 @@
+#Steps: 
+#Step 1:Create a program that ask for 4 numbers. 
+#Step 2:Print the 4 numbers from highest to lowest using only if-else statement.
 
 def enter_4_Numbers ():
     a = int (input (f"Give 1st number: "))
@@ -6,73 +9,74 @@ def enter_4_Numbers ():
     d = int (input (f"Give 4th number: "))
     return a, b, c, d
 
-def arrange (a,b,c,d):
-    if a > b > c > d:
+
+def get_First (a, b, c, d):
+    if a > b and a > c and a > d:
         first = a 
     else:
-        if b > a > c > d:
+        if b > a and b > c and b > d:
             first = b
         else:
-            if c > a > b > d:
+            if c > a and c > b and c > d:
                 first = c
             else:
-                d > a > b > c
+                d > a and d > b and d > c
                 first = d
     return first
 
-def arrange2 (a,b,c,d):
-    if a < b < c < d:
+
+def get_Fourth (a, b, c, d):
+    if a < b and a < c and a < d:
         fourth = a 
     else:
-        if b < a < c < d:
+        if b < a and b < c and b < d:
             fourth = b
         else:
-            if c < a < b < d:
+            if c < a and c < b and c < d:
                 fourth = c
             else:
-                d < a < b < c
+                d < a and d < b and d < c 
                 fourth = d
     return fourth
 
-def arrange3 (a,b,c,d, first, fourth):
-    if  first > a > fourth and a > b > fourth or a > c > fourth or a > d > fourth:
+
+def get_Second (a, b, c, d, first, fourth):
+    if  first > a > fourth and (a > b > fourth or a > c > fourth or a > d > fourth):
         second = a 
     else:
-        if first > b > fourth and b > a > fourth or b > c > fourth or b > d > fourth:
+        if first > b > fourth and (b > a > fourth or b > c > fourth or b > d > fourth):
             second = b 
         else:
-            if first > c > fourth and c > a > fourth or c > b > fourth or c > d > fourth:
+            if first > c > fourth and (c > a > fourth or c > b > fourth or c > d > fourth):
                 second = c
             else:
-                first > d > fourth and d > a > fourth or d > c > fourth or d > b > fourth
+                first > d > fourth and (d > a > fourth or d > b > fourth or d > c > fourth)
                 second = d
-    return second
+    return second 
 
 
-def arrange4 (a,b,c,d, first, fourth, second):
+def get_Third (a, b, c, d, first, second, fourth):
     if first > second > a > fourth:
-        third = a 
+        third = a
     else:
         if first > second > b > fourth:
-            third = b 
-        else: 
+            third = b
+        else:
             if first > second > c > fourth:
-                third = c 
+                third = c
             else:
                 first > second > d > fourth
-                third = d 
+                third = d
     return third
 
 
 a, b, c, d = enter_4_Numbers ()
-first = arrange (a,b,c,d)
-fourth = arrange2 (a,b,c,d)
-second = arrange3 (a,b,c,d, first, fourth)
-third = arrange4 (a,b,c,d, first, second, fourth)
+first = get_First (a, b, c, d)
+fourth = get_Fourth (a, b, c, d)
+second = get_Second (a, b, c, d, first, fourth)
+third = get_Third (a, b, c, d, first, second, fourth)
+
 
 print (f"The numbers arranged from highest to lowest are: {first}, {second}, {third}, {fourth}")
 
 
-#Steps: 
-#Step 1:Create a program that ask for 4 numbers. 
-#Step 2:Print the 4 numbers from highest to lowest using only if-else statement.
