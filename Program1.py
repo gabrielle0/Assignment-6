@@ -26,7 +26,7 @@ def get_First (a, b, c, d):
 
 
 def get_Fourth (a, b, c, d):
-    if a < b and a < c and a < d:
+    if a <  b and a < c and a < d:
         fourth = a 
     else:
         if b < a and b < c and b < d:
