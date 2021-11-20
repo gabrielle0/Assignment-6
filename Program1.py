@@ -9,7 +9,6 @@ def enter_4_Numbers ():
     d = int (input (f"Give 4th number: "))
     return a, b, c, d
 
-
 def get_First (a, b, c, d):
     if a > b and a > c and a > d:
         first = a 
@@ -23,7 +22,6 @@ def get_First (a, b, c, d):
                 d > a and d > b and d > c
                 first = d
     return first
-
 
 def get_Second (a, b, c, d, first, fourth):
     if  first > a > fourth and (a > b > fourth or a > c > fourth or a > d > fourth):
@@ -39,7 +37,6 @@ def get_Second (a, b, c, d, first, fourth):
                 second = d
     return second 
 
-
 def get_Third (a, b, c, d, first, second, fourth):
     if first > second > a > fourth:
         third = a
@@ -53,7 +50,6 @@ def get_Third (a, b, c, d, first, second, fourth):
                 first > second > d > fourth
                 third = d
     return third
-
 
 def get_Fourth (a, b, c, d):
     if a <  b and a < c and a < d:
@@ -69,13 +65,11 @@ def get_Fourth (a, b, c, d):
                 fourth = d
     return fourth
 
-
 a, b, c, d = enter_4_Numbers ()
 first = get_First (a, b, c, d)
 fourth = get_Fourth (a, b, c, d)
 second = get_Second (a, b, c, d, first, fourth)
 third = get_Third (a, b, c, d, first, second, fourth)
-
 
 print (f"The numbers arranged from highest to lowest are: {first}, {second}, {third}, {fourth}")
 
