@@ -25,21 +25,6 @@ def get_First (a, b, c, d):
     return first
 
 
-def get_Fourth (a, b, c, d):
-    if a <  b and a < c and a < d:
-        fourth = a 
-    else:
-        if b < a and b < c and b < d:
-            fourth = b
-        else:
-            if c < a and c < b and c < d:
-                fourth = c
-            else:
-                d < a and d < b and d < c 
-                fourth = d
-    return fourth
-
-
 def get_Second (a, b, c, d, first, fourth):
     if  first > a > fourth and (a > b > fourth or a > c > fourth or a > d > fourth):
         second = a 
@@ -68,6 +53,21 @@ def get_Third (a, b, c, d, first, second, fourth):
                 first > second > d > fourth
                 third = d
     return third
+
+
+def get_Fourth (a, b, c, d):
+    if a <  b and a < c and a < d:
+        fourth = a 
+    else:
+        if b < a and b < c and b < d:
+            fourth = b
+        else:
+            if c < a and c < b and c < d:
+                fourth = c
+            else:
+                d < a and d < b and d < c 
+                fourth = d
+    return fourth
 
 
 a, b, c, d = enter_4_Numbers ()
