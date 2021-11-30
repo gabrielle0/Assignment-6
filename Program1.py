@@ -3,73 +3,75 @@
 #Step 2:Print the 4 numbers from highest to lowest using only if-else statement.
 
 def enter_4_Numbers ():
-    a = int (input (f"Give 1st number: "))
-    b = int (input (f"Give 2nd number: "))
-    c = int (input (f"Give 3rd number: "))
-    d = int (input (f"Give 4th number: "))
-    return a, b, c, d
+    first_Input = int (input (f"Give 1st number: "))
+    second_Input  = int (input (f"Give 2nd number: "))
+    third_Input = int (input (f"Give 3rd number: "))
+    fourth_Input = int (input (f"Give 4th number: "))
+    return first_Input, second_Input, third_Input, fourth_Input
 
-def get_First (a, b, c, d):
-    if a > b and a > c and a > d:
-        first = a 
+def get_First (first_Input, second_Input, third_Input, fourth_Input):
+    if first_Input > second_Input and first_Input > third_Input and first_Input > fourth_Input:
+        first = first_Input
     else:
-        if b > a and b > c and b > d:
-            first = b
+        if second_Input > first_Input and second_Input > third_Input and second_Input > fourth_Input:
+            first = second_Input
         else:
-            if c > a and c > b and c > d:
-                first = c
+            if third_Input > first_Input and third_Input > second_Input and third_Input > fourth_Input:
+                first = third_Input
             else:
-                d > a and d > b and d > c
-                first = d
+                fourth_Input > first_Input and fourth_Input > second_Input and fourth_Input > third_Input
+                first = fourth_Input
     return first
 
-def get_Second (a, b, c, d, first, fourth):
-    if  first > a > fourth and (a > b > fourth or a > c > fourth or a > d > fourth):
-        second = a 
+def get_Second (first_Input, second_Input, third_Input, fourth_Input, first, fourth):
+    if  first > first_Input > fourth and (first_Input > second_Input > fourth or first_Input > third_Input > fourth or first_Input > fourth_Input > fourth):
+        second = first_Input
     else:
-        if first > b > fourth and (b > a > fourth or b > c > fourth or b > d > fourth):
-            second = b 
+        if first > second_Input > fourth and (second_Input > first_Input > fourth or second_Input > third_Input > fourth or second_Input > fourth_Input > fourth):
+            second = second_Input
         else:
-            if first > c > fourth and (c > a > fourth or c > b > fourth or c > d > fourth):
-                second = c
+            if first > third_Input > fourth and (third_Input > first_Input > fourth or third_Input > second_Input > fourth or third_Input > fourth_Input > fourth):
+                second = third_Input
             else:
-                first > d > fourth and (d > a > fourth or d > b > fourth or d > c > fourth)
-                second = d
+                first > fourth_Input > fourth and (fourth_Input > first_Input > fourth or fourth_Input > second_Input > fourth or fourth_Input > third_Input > fourth)
+                second = fourth_Input
     return second 
 
-def get_Third (a, b, c, d, first, second, fourth):
-    if first > second > a > fourth:
-        third = a
+def get_Third (first_Input, second_Input, third_Input, fourth_Input, first, second, fourth):
+    if first > second > first_Input > fourth:
+        third = first_Input
     else:
-        if first > second > b > fourth:
-            third = b
+        if first > second > second_Input > fourth:
+            third = second_Input
         else:
-            if first > second > c > fourth:
-                third = c
+            if first > second > third_Input > fourth:
+                third = third_Input
             else:
-                first > second > d > fourth
-                third = d
+                first > second > fourth_Input > fourth
+                third = fourth_Input
     return third
 
-def get_Fourth (a, b, c, d):
-    if a <  b and a < c and a < d:
-        fourth = a 
+def get_Fourth (first_Input, second_Input, third_Input, fourth_Input):
+    if first_Input < second_Input and first_Input < third_Input and first_Input < fourth_Input:
+        fourth = first_Input
     else:
-        if b < a and b < c and b < d:
-            fourth = b
+        if second_Input < first_Input and second_Input < third_Input and second_Input < fourth_Input:
+            fourth = second_Input
         else:
-            if c < a and c < b and c < d:
-                fourth = c
+            if third_Input < first_Input and third_Input < second_Input and third_Input < fourth_Input:
+                fourth = third_Input
             else:
-                d < a and d < b and d < c 
-                fourth = d
+                fourth_Input < first_Input and fourth_Input < second_Input and fourth_Input < third_Input
+                fourth = fourth_Input
     return fourth
 
-a, b, c, d = enter_4_Numbers ()
-first = get_First (a, b, c, d)
-fourth = get_Fourth (a, b, c, d)
-second = get_Second (a, b, c, d, first, fourth)
-third = get_Third (a, b, c, d, first, second, fourth)
+
+
+first_Input, second_Input, third_Input, fourth_Input = enter_4_Numbers ()
+first = get_First (first_Input, second_Input, third_Input, fourth_Input)
+fourth = get_Fourth (first_Input, second_Input, third_Input, fourth_Input)
+second = get_Second (first_Input, second_Input, third_Input, fourth_Input, first, fourth)
+third = get_Third (first_Input, second_Input, third_Input, fourth_Input, first, second, fourth)
 
 print (f"The numbers arranged from highest to lowest are: {first}, {second}, {third}, {fourth}")
 
